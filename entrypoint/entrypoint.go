@@ -7,15 +7,17 @@ import (
 )
 
 func Execute(){
+	rate := 10000 //milliseconds
+	maxPics := 6000
 	reader, err := Reader.Create(3, 2)
 	if err != nil {
 		log.Fatal("Failed to create reader: ", err)
 	}
 
-	interval := scheduler.SetInterval(reader.ReadChannels, 1000, false)
+	interval := scheduler.SetInterval(reader.ReadChannels, rate, false)
 
 	for {
-		if reader.Counter == 60 {
+		if reader.Counter >= maxPics {
 			interval <- true
 			return
 		}

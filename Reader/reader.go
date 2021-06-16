@@ -3,7 +3,6 @@ package Reader
 import (
 	"fmt"
 	"seawise.com/capture/channel"
-	"time"
 )
 
 type Reader struct {
@@ -27,12 +26,6 @@ func Create(channels int, offset int) (*Reader, error) {
 	}
 
 	return reader, nil
-}
-
-func (r *Reader) Test() error {
-	r.Counter++
-	fmt.Printf("%s, %s, %s", time.Now(), "running", r.Counter)
-	return nil
 }
 
 func (r *Reader) ReadChannels() error {
