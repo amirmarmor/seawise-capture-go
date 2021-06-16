@@ -1,8 +1,9 @@
 package main
 
-import "seawise.com/capture/entrypoint"
+import "seawise.com/capture/server"
 
 func main() {
-	entrypoint.Execute()
+	entryPoint := server.Entrypoint{}
+	entryPoint.Execute()
 }
 

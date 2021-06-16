@@ -3,6 +3,7 @@ package Reader
 import (
 	"fmt"
 	"seawise.com/capture/channel"
+	"seawise.com/capture/log"
 )
 
 type Reader struct {
@@ -34,6 +35,7 @@ func (r *Reader) ReadChannels() error {
 		if err != nil {
 			return fmt.Errorf("failed to read channels: %v", err)
 		}
+		log.V5(fmt.Sprintf("taking picture %v", r.Counter))
 		r.Counter++
 	}
 	return nil
