@@ -17,7 +17,7 @@ var Config Configuration
 
 func InitFlags() {
 	flag.IntVar(&Config.Channels, "channels", 3, "The number of channels to use")
-	flag.IntVar(&Config.Offset, "offset", 2, "The number of the first channel - if no webcam = 0")
+	flag.IntVar(&Config.Offset, "offset", 0, "The number of the first channel - if no webcam = 0")
 	flag.IntVar(&Config.Rate, "rate", 10000, "The rate of pictures in ms")
 	flag.IntVar(&Config.MaxPics, "maxpics", 6000, "maximal number of pics to take")
 
