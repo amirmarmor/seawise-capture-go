@@ -9,7 +9,7 @@ import (
 
 type Entrypoint struct {}
 
-func (p *Entrypoint) Execute(){
+func (p *Entrypoint) Execute() {
 	log.InitFlags()
 	core.InitFlags()
 	log.Info("starting")
@@ -28,3 +28,4 @@ func (p *Entrypoint) Execute(){
 		}
 	}
 }
+
